@@ -1,4 +1,4 @@
-import { getValidUserData } from "../support/getEnvVariables.helper";
+import { getValidUserData } from "../../support/getEnvVariables.helper";
 import Common from "./common";
 class LoginPage extends Common {
   usernameInput = () => cy.getByTestId("username");

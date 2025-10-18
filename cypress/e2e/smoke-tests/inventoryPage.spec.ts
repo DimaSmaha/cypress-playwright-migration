@@ -1,5 +1,5 @@
-import inventoryPage from "cypress/pageobjects/inventoryPage";
-import loginPage from "cypress/pageobjects/loginPage";
+import inventoryPage from "cypress/app/pageobjects/inventoryPage";
+import loginPage from "cypress/app/pageobjects/loginPage";
 import { itemsNames } from "../../fixtures/data.json";
 
 describe("InventoryPage tests", () => {

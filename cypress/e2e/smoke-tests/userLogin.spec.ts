@@ -1,6 +1,6 @@
 import { getValidUserData } from "../../support/getEnvVariables.helper";
-import inventoryPage from "cypress/pageobjects/inventoryPage";
-import loginPage from "cypress/pageobjects/loginPage";
+import inventoryPage from "cypress/app/pageobjects/inventoryPage";
+import loginPage from "cypress/app/pageobjects/loginPage";
 import { itemsNames, errorTexts } from "../../fixtures/data.json";
 
 describe("Login tests", () => {
