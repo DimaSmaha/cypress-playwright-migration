@@ -1,4 +1,4 @@
 export const getValidUserData = {
-  validUserLogin: `${Cypress.env("VALID_USER_LOGIN")}`,
-  validUserPassword: `${Cypress.env("VALID_USER_PASSWORD")}`,
+  validUserLogin: process.env.VALID_USER_LOGIN || "",
+  validUserPassword: process.env.VALID_USER_PASSWORD || "",
 };
