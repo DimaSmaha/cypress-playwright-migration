@@ -7,32 +7,32 @@ class LoginPage extends Common {
     super(page);
   }
 
-  get usernameInput(): Locator {
+  usernameInput(): Locator {
     return this.page.getByTestId("username");
   }
 
-  get passwordInput(): Locator {
+  passwordInput(): Locator {
     return this.page.getByTestId("password");
   }
 
-  get loginButton(): Locator {
+  loginButton(): Locator {
     return this.page.getByTestId("login-button");
   }
 
-  get loginError(): Locator {
+  loginError(): Locator {
     return this.page.getByTestId("error");
   }
 
   async fillUserNameInput(userName: string): Promise<void> {
-    await this.usernameInput.fill(userName);
+    await this.usernameInput().fill(userName);
   }
 
   async fillPasswordInput(password: string): Promise<void> {
-    await this.passwordInput.fill(password);
+    await this.passwordInput().fill(password);
   }
 
   async clickLoginButton(): Promise<void> {
-    await this.loginButton.click();
+    await this.loginButton().click();
   }
 
   async loginWithValidData(): Promise<void> {

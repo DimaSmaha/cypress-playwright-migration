@@ -10,40 +10,40 @@ class InventoryPage extends Common {
     this.item = new ItemComponent(page);
   }
 
-  get backbackItem(): Locator {
+  backbackItem(): Locator {
     return this.page.locator("#item_4_title_link");
   }
 
-  get backbackAddItemButton(): Locator {
+  backbackAddItemButton(): Locator {
     return this.page.getByTestId("add-to-cart-sauce-labs-backpack");
   }
 
-  get bikeLightsAddItemButton(): Locator {
+  bikeLightsAddItemButton(): Locator {
     return this.page.getByTestId("add-to-cart-sauce-labs-bike-light");
   }
 
-  get backbackRemoveItemButton(): Locator {
+  backbackRemoveItemButton(): Locator {
     return this.page.getByTestId("remove-sauce-labs-backpack");
   }
 
-  get shoppingCartLogo(): Locator {
+  shoppingCartLogo(): Locator {
     return this.page.locator("#shopping_cart_container");
   }
 
   async clickBackbackAddItemButton(): Promise<void> {
-    await this.backbackAddItemButton.click();
+    await this.backbackAddItemButton().click();
   }
 
   async clickBikeLightsAddItemButton(): Promise<void> {
-    await this.bikeLightsAddItemButton.click();
+    await this.bikeLightsAddItemButton().click();
   }
 
   async clickBackbackRemoveItemButton(): Promise<void> {
-    await this.backbackRemoveItemButton.click();
+    await this.backbackRemoveItemButton().click();
   }
 
   async assertCartLogoItems(itemsNum: number): Promise<void> {
-    await expect(this.shoppingCartLogo).toHaveText(itemsNum.toString());
+    await expect(this.shoppingCartLogo()).toHaveText(itemsNum.toString());
   }
 }
 

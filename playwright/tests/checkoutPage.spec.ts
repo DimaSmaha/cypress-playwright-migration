@@ -1,5 +1,5 @@
 import { itemsNames } from "playwright/constants/data.json";
-import { test } from "playwright/app/fixtures/test.fixture";
+import { test, expect } from "playwright/app/fixtures/test.fixture";
 
 test.describe("Checkout page tests", () => {
   test.beforeEach(async ({ pageManager }) => {
@@ -12,7 +12,7 @@ test.describe("Checkout page tests", () => {
     await expect(pageManager.inventoryPage.item.itemByName("Backpack")).toHaveText(itemsNames.backpackItemName);
     await pageManager.inventoryPage.item.addToCartByName("Backpack");
     await pageManager.inventoryPage.assertCartLogoItems(2);
-    await pageManager.inventoryPage.shoppingCartLogo.click();
+    await pageManager.inventoryPage.shoppingCartLogo().click();
     await expect(pageManager.checkoutPage.title()).toBeVisible();
     await expect(pageManager.checkoutPage.item.itemByName("Bike Light")).toHaveText(itemsNames.bikeLight);
     await expect(pageManager.checkoutPage.item.itemByName("Backpack")).toHaveText(itemsNames.backpackItemName);

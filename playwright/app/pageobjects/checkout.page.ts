@@ -10,15 +10,15 @@ class CheckoutPage extends Common {
     this.item = new ItemComponent(page);
   }
 
-  get title(): Locator {
+  title(): Locator {
     return this.page.getByTestId("title").filter({ hasText: "Your Cart" });
   }
 
-  get checkoutButton(): Locator {
+  checkoutButton(): Locator {
     return this.page.getByTestId("checkout");
   }
 
-  get checkoutYourInformation(): {
+  checkoutYourInformation(): {
     firstNameInput: Locator;
     lastNameInput: Locator;
     postalCodeInput: Locator;
@@ -32,7 +32,7 @@ class CheckoutPage extends Common {
     };
   }
 
-  get checkoutOverview() {
+  checkoutOverview() {
     return {
       paymentInfoValue: this.page.getByTestId("payment-info-value"),
       shippingInfoValue: this.page.getByTestId("shipping-info-value"),
