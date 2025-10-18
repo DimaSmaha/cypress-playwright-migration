@@ -12,9 +12,7 @@ describe("Login tests", () => {
     loginPage.fillUserNameInput(getValidUserData.validUserLogin);
     loginPage.fillPasswordInput(getValidUserData.validUserPassword);
     loginPage.clickLoginButton();
-    inventoryPage
-      .backbackItem()
-      .should("have.text", itemsNames.backpackItemName);
+    inventoryPage.backbackItem().should("have.text", itemsNames.backpackItemName);
   });
 
   it("The application should show an error with invalid password", () => {

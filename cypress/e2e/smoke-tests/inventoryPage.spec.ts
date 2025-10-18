@@ -8,17 +8,13 @@ describe("InventoryPage tests", () => {
   });
 
   it("The user should add item to the card", () => {
-    inventoryPage
-      .backbackItem()
-      .should("have.text", itemsNames.backpackItemName);
+    inventoryPage.backbackItem().should("have.text", itemsNames.backpackItemName);
     inventoryPage.clickBackbackAddItemButton();
     inventoryPage.assertCartLogoItems(1);
   });
 
   it("The user should remove item from the card", () => {
-    inventoryPage
-      .backbackItem()
-      .should("have.text", itemsNames.backpackItemName);
+    inventoryPage.backbackItem().should("have.text", itemsNames.backpackItemName);
     inventoryPage.clickBackbackAddItemButton();
     inventoryPage.assertCartLogoItems(1);
     inventoryPage.clickBackbackRemoveItemButton();
@@ -26,9 +22,7 @@ describe("InventoryPage tests", () => {
   });
 
   it("The user should add multiple items to the card", () => {
-    inventoryPage
-      .backbackItem()
-      .should("have.text", itemsNames.backpackItemName);
+    inventoryPage.backbackItem().should("have.text", itemsNames.backpackItemName);
     inventoryPage.clickBackbackAddItemButton();
     inventoryPage.assertCartLogoItems(1);
     inventoryPage.clickBikeLightsAddItemButton();
