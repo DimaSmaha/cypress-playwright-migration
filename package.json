@@ -5,6 +5,7 @@
     "cy-run-smoke": "cypress run --config-file smoke.config.ts"
   },
   "devDependencies": {
+    "@playwright/test": "^1.56.1",
     "@testing-library/cypress": "^10.0.3",
     "@types/node": "^22.13.5",
     "cypress": "^14.1.0",
