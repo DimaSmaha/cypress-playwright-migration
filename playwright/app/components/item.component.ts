@@ -26,7 +26,7 @@ export class ItemComponent {
   }
 
   itemByName(name: string): Locator {
-    return this.page.locator('[data-test="inventory-item-name"]', { hasText: name });
+    return this.page.locator('[data-test="inventory-item-name"]', { hasText: name }).first();
   }
 
   async addToCartByName(name: string): Promise<void> {
