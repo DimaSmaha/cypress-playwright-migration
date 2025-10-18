@@ -8,8 +8,8 @@ describe("InventoryPage tests", () => {
   });
 
   it("The user should add item to the card", () => {
-    inventoryPage.backbackItem().should("have.text", itemsNames.backpackItemName);
-    inventoryPage.clickBackbackAddItemButton();
+    inventoryPage.item.itemByName("Bike Light").should("have.text", itemsNames.bikeLight);
+    inventoryPage.item.addToCartByName("Bike Light");
     inventoryPage.assertCartLogoItems(1);
   });
 

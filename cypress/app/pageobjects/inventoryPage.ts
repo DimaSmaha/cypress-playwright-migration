@@ -1,6 +1,9 @@
+import { ItemComponent } from "../components/item.component";
 import Common from "./common";
 
 class InventoryPage extends Common {
+  item = new ItemComponent();
+
   backbackItem = () => cy.get("#item_4_title_link");
   backbackAddItemButton = () => cy.getByTestId("add-to-cart-sauce-labs-backpack");
   bikeLightsAddItemButton = () => cy.getByTestId("add-to-cart-sauce-labs-bike-light");
