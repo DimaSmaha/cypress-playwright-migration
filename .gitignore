@@ -9,3 +9,5 @@ screenshots
 /blob-report/
 /playwright/.cache/
 /playwright/.auth/
+/playwright/reports/
+/playwright/test-results/
