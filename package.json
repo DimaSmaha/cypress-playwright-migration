@@ -3,6 +3,7 @@
     "cy-open": "cypress open",
     "cy-open-smoke": "cypress open --config-file smoke.config.ts",
     "cy-run-smoke": "cypress run --config-file smoke.config.ts",
+    "pw-install-chromium": "playwright install --with-deps chromium",
     "pw-run-smoke": "playwright test --project=chromium"
   },
   "devDependencies": {
