@@ -18,3 +18,4 @@ When generating the Playwright test code or any page objects, ensure that:
 5. Ignore the network spying and stubbing parts of the Cypress tests.
 6. Comment out all the methods with waits (e.g., cy.wait) in the Playwright code.
 7. Do not use get methods in page objects; use direct methods instead `backbackItem = () => this.page.locator('[id="item_4_title_link"]');`
+8. PLEASE OUTPUT ALL THE MIGRATED CODE TO THE CHAT.
