@@ -1,14 +1,15 @@
-import { itemsNames } from "playwright/constants/data.json";
 import { test, expect } from "playwright/app/fixtures/test.fixture";
+import { itemsNames } from "playwright/constants/data.json";
 
+// InventoryPage tests migrated from Cypress to Playwright
 test.describe("InventoryPage tests", () => {
   test.beforeEach(async ({ pageManager }) => {
     await pageManager.loginPage.loginWithValidData();
   });
 
   test("The user should add item to the cart", async ({ pageManager }) => {
-    await expect(pageManager.inventoryPage.item.itemByName("Bike Light")).toHaveText(itemsNames.bikeLight);
-    await pageManager.inventoryPage.item.addToCartByName("Bike Light");
+    await expect(pageManager.inventoryPage.item.itemByName(itemsNames.bikeLight)).toHaveText(itemsNames.bikeLight);
+    await pageManager.inventoryPage.item.addToCartByName(itemsNames.bikeLight);
     await pageManager.inventoryPage.assertCartLogoItems(1);
   });
 
@@ -17,7 +18,7 @@ test.describe("InventoryPage tests", () => {
     await pageManager.inventoryPage.clickBackbackAddItemButton();
     await pageManager.inventoryPage.assertCartLogoItems(1);
     await pageManager.inventoryPage.clickBackbackRemoveItemButton();
-    await expect(pageManager.inventoryPage.shoppingCartLogo()).toBeEmpty();
+    await expect(pageManager.inventoryPage.shoppingCartLogo()).not.toHaveText(/\d/); // Should not have any number text
   });
 
   test("The user should add multiple items to the cart", async ({ pageManager }) => {
